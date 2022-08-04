@@ -6,7 +6,7 @@ function Header() {
     const [isOpened , setIsOpened] = useState(false)
   return (
     <>
-        <div className=' w-full flex justify-around items-center p-3 '>
+        <div className=' w-full flex justify-around items-center p-3 fixed shadow-md bg-white top-0 z-40 xl:shadow-none'>
             <div className='flex justify-center items-center gap-3'>
                 <p className='font-bold text-3xl rounded-full h-8 w-8 bg-[#FFBD37] text-white p-6 flex justify-center items-center'>B</p>
                 <p className='text-[#233348] text-[24px] font-bold'>eBike</p>
@@ -20,9 +20,10 @@ function Header() {
                     <li className='text-[#7D7987] text-[18px]'>Contact</li>
                 </ul>
             </div>
+            
             {/* Mobile Nav */}
 
-            {isOpened && <div>
+            {isOpened && <div className='z-20'>
                 <ul className='flex bg-[#FCB72B] justify-center items-center flex-col gap-6 cursor-pointer w-screen h-screen absolute right-0 top-0 xl:hidden'>
                     <li className='text-[##233348] text-[18px] font-bold'>Product</li>
                     <li className='text-black text-[18px] xl:text-[#7D7987]'>Bike type</li>
@@ -31,8 +32,8 @@ function Header() {
                     <li className='text-black text-[18px] xl:text-[#7D7987]'>Contact</li>
                 </ul>
             </div>}
-            <div className='xl:hidden'>
-            <Hamburger  toggled={isOpened} toggle={setIsOpened} easing='ease-in' size={20} direction='left'/>
+            <div className='xl:hidden z-30'>
+            <Hamburger color='#944d06'  toggled={isOpened} toggle={setIsOpened} easing='ease-in' size={20} direction='left'/>
             </div>
         </div>
     </>
