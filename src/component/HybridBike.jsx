@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../shared/Card'
 import Lottie from 'lottie-react'
-import BikeLottie from '../assets/lottie/BikeLottie.json'
+import bikeLottie from '../assets/lottie/bikeLottie.json'
 import {motion} from 'framer-motion'
 
 function HybridBike() {
@@ -42,7 +42,7 @@ function HybridBike() {
         viewport={{once:false}}
         className=' flex justify-center gap-5 items-center flex-col rounded-md  shadow-md bg-white p-3 w-[80vw] h-[350px]  lg:w-[25vw] lg:h-[380px] lg:gap-5'
       >
-        <Lottie className='lg:w-[243px] h-[204px]' animationData={BikeLottie} />
+        <Lottie className='lg:w-[243px] h-[204px]' animationData={bikeLottie} />
         <div className='h-[1.5px] w-[95%] bg-[#C2CFE0] mb-3'></div>
         <div className='flex justify-center items-center gap-[6rem]'>
           <div className='flex flex-col '>
