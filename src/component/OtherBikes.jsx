@@ -1,37 +1,55 @@
 import React from 'react'
-import others from '../assets/PNG/others.png'
+import others from '../assets/PNG/others.svg'
+import OtherBikeCard from '../shared/OtherBikeCard'
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation,Pagination, Scrollbar, A11y } from "swiper";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+SwiperCore.use([ Navigation , Pagination,Scrollbar , A11y])
 
 function OtherBikes() {
   return (
-    <div className='flex justify-center items-center gap-[2rem] flex-col text-left  mt-[5rem]'>
-      <h2 className='text-[20px] text-[#233348] font-bold'>Other Types Of Bikes</h2>
-      <section className='flex justify-center  items-center flex-col'>
-        <div className='flex justify-center gap-[1rem] items-center flex-col'>
-        <div className='bg-white p-3 w-[80vw] h-[8rem] flex justify-center items-center shadow-md rounded-md '>
-          <img className='w-[166px] h-[100px]' src={others} alt="" />
-        </div>
-          <p className='text[#233348] font-semibold'>Hybrid Bikes</p>  
-        </div> 
-      </section>
+    <div className=' mt-[5rem]'>
+      <h2 className='text-[20px] text-[#233348]  lg:ml-72 font-bold mb-5 p-4'>Other Types Of Bikes</h2>
+      <section className='lg:ml-72' >
+      <Swiper
+      spaceBetween={-25}
+      slidesPerView={1}
+      className='mySwiper'
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+        
+        },
+        768: {
+          slidesPerView: 2,
+          
+        },
+        1024: {
+          slidesPerView: 5,
+          
+        },
+      }}>
 
-      {/* second */}
-      <section className='flex justify-center  items-center flex-col'>
-        <div className='flex justify-center gap-[1rem] items-center flex-col'>
-        <div className='bg-white p-3 w-[80vw] h-[8rem] flex justify-center items-center shadow-md rounded-md '>
-          <img className='w-[166px] h-[100px]' src={others} alt="" />
-        </div>
-          <p className='text[#233348] font-semibold'>Fixie Bikes</p>  
-        </div> 
-      </section>
-
-      {/* third */}
-      <section className='flex justify-center  items-center flex-col'>
-        <div className='flex justify-center gap-[1rem] items-center flex-col'>
-        <div className='bg-white p-3 w-[80vw] h-[8rem] flex justify-center items-center shadow-md rounded-md '>
-          <img className='w-[166px] h-[100px]' src={others} alt="" />
-        </div>
-          <p className='text[#233348] font-semibold'>Folding Bikes</p>  
-        </div> 
+      <SwiperSlide>
+        <OtherBikeCard img={others} bikeType='Hybrid bike' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <OtherBikeCard img={others} bikeType='Hybrid bike' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <OtherBikeCard img={others} bikeType='Hybrid bike' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <OtherBikeCard img={others} bikeType='Hybrid bike' />
+      </SwiperSlide>
+      <SwiperSlide className='opacity-25'>
+        <OtherBikeCard img={others} bikeType='Hybrid bike' />
+      </SwiperSlide>
+    
+    </Swiper>
+ 
       </section>
     </div>
   )
