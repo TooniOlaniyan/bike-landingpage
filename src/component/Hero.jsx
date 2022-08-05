@@ -38,7 +38,7 @@ function Hero() {
    }
 
   return (
-    <div className='flex flex-col justify-center items-center px-5 xl:flex-row mt-[5rem] lg:items-end lg:justify-center lg:gap-[6rem]'>
+    <div className='flex flex-col overflow-auto justify-center items-center px-5 xl:flex-row mt-[5rem] lg:items-end lg:justify-center lg:gap-[6rem]'>
       <motion.div
         transition={{ staggerChildren: 0.3 }}
         initial='initial'

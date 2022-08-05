@@ -10,23 +10,10 @@ import {motion} from 'framer-motion'
 SwiperCore.use([ Navigation , Pagination,Scrollbar , A11y])
 
 function OtherBikes() {
-  const EbikeVarient = {
-    initial: {
-      x: -1000,
-      opacity: 0,
-    },
-    final: {
-      x: 0,
-      opacity: 1,
-    },
-    transition: {
-      bounce: 0.5,
-    },
-  }
   return (
     <div className=' mt-[5rem]'>
       <h2 className='text-[20px] text-[#233348]  lg:ml-72 font-bold mb-5 p-4'>Other Types Of Bikes</h2>
-      <motion.section variants={EbikeVarient} initial='initial' animate={'final'}  className='lg:ml-72' >
+      <section  className='lg:ml-72' >
       <Swiper
       spaceBetween={-25}
       slidesPerView={1}
@@ -64,7 +51,7 @@ function OtherBikes() {
     
     </Swiper>
  
-      </motion.section>
+      </section>
     </div>
   )
 }

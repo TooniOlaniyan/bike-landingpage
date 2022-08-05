@@ -12,27 +12,9 @@ import {motion} from 'framer-motion'
 SwiperCore.use([ Navigation , Pagination,Scrollbar , A11y])
 
 function Ebike() {
-  const EbikeVarient = {
-    initial:{
-      x:400,
-      opacity:0
-    },
-    final:{
-      x:0,
-      opacity:1
-    },
-    transition:{
-      bounce:0.5,
-    }
-  }
   return (
     <>
-      <motion.div
-        variants={EbikeVarient}
-        initial='initial'
-        animate={'final'}
-        className=' w-[100vw] ml-0 lg:max-w-[1200px] mt-10 p-4  lg:ml-72  lg:mt-[8rem]'
-      >
+      <div className=' w-[100vw] ml-0 lg:max-w-[1200px] overflow-hidden mt-10 p-4  lg:ml-72  lg:mt-[8rem]'>
         <Swiper
           spaceBetween={10}
           className='mySwiper'
@@ -104,7 +86,7 @@ function Ebike() {
             />
           </SwiperSlide>
         </Swiper>
-      </motion.div>
+      </div>
       <div className='flex justify-end gap-6 items-center mr-[15%] mt-[2rem] '>
         <div className='w-[48px] h-[48px] bg-gradient-to-b from-[#ffbc3794] to-[#ffbc37] rounded-full flex justify-center items-center cursor-pointer '>
           <BsArrowLeft

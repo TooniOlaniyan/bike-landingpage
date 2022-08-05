@@ -36,7 +36,7 @@ function HybridBike() {
     }
   }
   return (
-    <main className='flex justify-center items-center gap-[4rem] flex-col mt-[5rem] lg:flex-row lg:gap-[4rem] lg:mt-[10rem] '>
+    <main className='flex justify-center   overflow-auto items-center gap-[4rem] flex-col mt-[5rem] lg:flex-row lg:gap-[4rem] lg:mt-[10rem] '>
       <motion.div
         animate={{ x: [-1000, 0] }}
         viewport={{once:false}}
@@ -62,7 +62,7 @@ function HybridBike() {
         initial='initial'
         whileInView={'final'}
         viewport={{once:false , amount:0.1}}
-        className='flex justify-center gap-[2rem] items-center flex-col lg:gap-[2rem] lg:items-start'
+        className='flex justify-center  gap-[2rem]  items-center flex-col lg:gap-[2rem] lg:items-start'
       >
         <motion.h2
           variants={hybridVarient}

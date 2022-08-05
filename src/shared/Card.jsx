@@ -3,7 +3,7 @@ import React from 'react'
 function Card({heading , img , price , priceDollar , order}) {
   return (
     <div>
-      <div className=' flex justify-center items-center   shadow-lg bg-white w-[100vw] h-[386.23px] rounded-xl p-4 xl:w-[25vw]'>
+      <div className=' flex justify-center items-center overflow-hidden  shadow-lg bg-white w-[100vw] h-[386.23px] rounded-xl p-4 xl:w-[25vw]'>
           <div className="">
           <h2 className='text-[20px] text-[#233348] font-bold xl:mr-[8rem]'>{heading}</h2>
           <img src={img} alt="" />
