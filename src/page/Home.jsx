@@ -6,16 +6,12 @@ import OtherBikes from '../component/OtherBikes'
 import HybridBike from '../component/HybridBike'
 import Testimonies from '../component/Testimonies'
 import Footer from '../component/Footer'
-import { motion, useScroll } from 'framer-motion'
+
 
 
 function Home() {
-  const { scrollYProgress } = useScroll()
   return (
-    <motion.div
-      initial='hidden'
-      whileInView='visible'
-    >
+    <div>
       <Header />
       <Hero />
       <Ebike />
@@ -23,7 +19,7 @@ function Home() {
       <HybridBike />
       <Testimonies />
       <Footer />
-    </motion.div>
+    </div>
   )
 }
 

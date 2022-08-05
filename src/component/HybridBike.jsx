@@ -2,11 +2,46 @@ import React from 'react'
 import Card from '../shared/Card'
 import Lottie from 'lottie-react'
 import BikeLottie from '../assets/lottie/BikeLottie.json'
+import {motion} from 'framer-motion'
 
 function HybridBike() {
+  const hybridVarient = {
+    initial:{
+      x:300,
+      opacity:0
+    },
+    final:{
+      x:0,
+      opacity:1
+    },
+    transition:{
+      bounce:0.5,
+      duration:3
+
+    }
+  }
+  const textVarient = {
+    initial:{
+      y:300,
+      opacity:0
+    },
+    final:{
+      y:0,
+      opacity:1
+    },
+    transition:{
+      bounce:0.1,
+      duration:3
+
+    }
+  }
   return (
     <main className='flex justify-center items-center gap-[4rem] flex-col mt-[5rem] lg:flex-row lg:gap-[4rem] lg:mt-[10rem] '>
-      <div className=' flex justify-center gap-5 items-center flex-col rounded-md  shadow-md bg-white p-3 w-[80vw] h-[350px]  lg:w-[25vw] lg:h-[380px] lg:gap-5'>
+      <motion.div
+        animate={{ x: [-1000, 0] }}
+        viewport={{once:false}}
+        className=' flex justify-center gap-5 items-center flex-col rounded-md  shadow-md bg-white p-3 w-[80vw] h-[350px]  lg:w-[25vw] lg:h-[380px] lg:gap-5'
+      >
         <Lottie className='lg:w-[243px] h-[204px]' animationData={BikeLottie} />
         <div className='h-[1.5px] w-[95%] bg-[#C2CFE0] mb-3'></div>
         <div className='flex justify-center items-center gap-[6rem]'>
@@ -18,19 +53,38 @@ function HybridBike() {
             Order
           </button>
         </div>
-      </div>
+      </motion.div>
 
-      <article className='flex justify-center gap-[2rem] items-center flex-col lg:gap-[2rem] lg:items-start'>
-        <h2 className='text-[30px] text-[#233348] font-bold'>Hybrid Bikes</h2>
-        <p className='w-[80vw] text-[#7D7987] text-[18px] lg:w-[450px]'>
+      <motion.article
+        transition={{
+          staggerChildren: 0.2,
+        }}
+        initial='initial'
+        whileInView={'final'}
+        viewport={{once:false , amount:0.1}}
+        className='flex justify-center gap-[2rem] items-center flex-col lg:gap-[2rem] lg:items-start'
+      >
+        <motion.h2
+          variants={hybridVarient}
+          className='text-[30px] text-[#233348] font-bold'
+        >
+          Hybrid Bikes
+        </motion.h2>
+        <motion.p
+          variants={textVarient}
+          className='w-[80vw] text-[#7D7987] text-[18px] lg:w-[450px]'
+        >
           Dummy Text progressive, and affordable healthcare, accessible on
           mobile and online for everyone. To us, it’s not just work. We take
           pride in the solutions we deliver
-        </p>
-        <button className=' border-[1.3px] border-[#FCB72B] px-[3rem] py-3 rounded-[55px] text-[18px] text-[#FCB72B]'>
+        </motion.p>
+        <motion.button
+          variants={textVarient}
+          className=' border-[1.3px] border-[#FCB72B] px-[3rem] py-3 rounded-[55px] text-[18px] text-[#FCB72B]'
+        >
           Learn more
-        </button>
-      </article>
+        </motion.button>
+      </motion.article>
     </main>
   )
 }

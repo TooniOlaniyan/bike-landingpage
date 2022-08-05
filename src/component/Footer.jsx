@@ -1,10 +1,45 @@
 import React from 'react'
+import {motion} from 'framer-motion'
 
 function Footer() {
+  const leftVarient = {
+    initial: {
+      x: -500,
+      opacity: 0,
+    },
+    final: {
+      x: 0,
+      opacity: 1,
+    },
+    transition:{
+      delay: 3,
+      type: 'spring'
+    }
+  }
+  const rightVarient = {
+    initial: {
+      x: 500,
+      opacity: 0,
+    },
+    final: {
+      x: 0,
+      opacity: 1,
+    },
+    transition:{
+      delay: 2,
+      type: 'spring'
+    }
+  }
   return (
     <div className='flex justify-center items-center mt-[10rem] bg-[#FCB72B]  py-[6rem] overflow-hidden lg:mt-[8rem]'>
       <article className='flex justify-between items-center flex-col-reverse gap-[8rem] lg:flex-row overflow-hidden lg:gap-[20rem]'>
-        <div className='flex justify-center items-center flex-col gap-[1rem] lg:items-start'>
+        <motion.div
+          variants={leftVarient}
+          initial='initial'
+          animate='final'
+          viewport={{once:false , amount: 0.1}}
+          className='flex justify-center items-center flex-col gap-[1rem] lg:items-start'
+        >
           <div className='flex justify-center items-center gap-3'>
             <p className='font-bold text-[26px] rounded-full h-4 w-4 bg-[#fff] text-[#FCB72B] p-4 flex justify-center items-center'>
               B
@@ -18,8 +53,14 @@ function Footer() {
           <p className='text-[#fff] text-[18px]'>
             ©eBike 2021. All rights reserved
           </p>
-        </div>
-        <div className='flex justify-center items-center gap-[6rem] lg:gap-[4rem]'>
+        </motion.div>
+        <motion.div
+          variants={rightVarient}
+          initial='initial'
+          animate={'final'}
+          
+          className='flex justify-center items-center gap-[6rem] lg:gap-[4rem]'
+        >
           <div className='flex flex-col gap-[0.8rem]'>
             <h1 className='text-[#fff] text-[18px] font-bold lg:text-[20px]'>
               Company
@@ -46,7 +87,7 @@ function Footer() {
               How it works
             </p>
           </div>
-        </div>
+        </motion.div>
       </article>
     </div>
   )

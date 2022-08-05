@@ -7,11 +7,30 @@ import "swiper/css/navigation";
 import { Parallax, Pagination, Navigation } from "swiper";
 import SwiperContent from './SwiperContent';
 import person1 from '../assets/PNG/person1.png'
+import { motion } from 'framer-motion'
 
 function Testimonies() {
+    const sliderVarient = {
+      initial: {
+        x: 1000,
+        opacity: 0,
+      },
+      final: {
+        x: 0,
+        opacity: 1,
+      },
+      transition: {
+        ease: [0.17, 0.67, 0.83, 0.67],
+      },
+    }
   return (
     <>
-      <div className='flex justify-center items-center w-[90vw] mt-[8rem] lg:w-[60vw] mx-auto '>
+      <motion.div
+        variants={sliderVarient}
+        initial='initial'
+        animate={'final'}
+        className='flex justify-center items-center w-[90vw] mt-[8rem] lg:w-[60vw] mx-auto '
+      >
         <Swiper
           slidesPerView={1}
           navigation={{
@@ -55,7 +74,7 @@ function Testimonies() {
             />
           </SwiperSlide>
         </Swiper>
-      </div>
+      </motion.div>
       <div className='hidden lg:flex justify-center items-center gap-[9rem] mt-8 '>
         <BsArrowLeft
           className='swiper-custom-navigation swiper-custom-navigation-prev backNavigate opacity-30'
