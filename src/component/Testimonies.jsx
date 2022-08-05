@@ -56,7 +56,7 @@ function Testimonies() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className='flex justify-center items-center gap-[9rem] mt-8 '>
+      <div className='hidden lg:flex justify-center items-center gap-[9rem] mt-8 '>
         <BsArrowLeft
           className='swiper-custom-navigation swiper-custom-navigation-prev backNavigate opacity-30'
           size={35}

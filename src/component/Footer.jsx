@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='flex justify-center items-center mt-[5rem] bg-[#FCB72B]  py-[6rem] overflow-hidden'>
+    <div className='flex justify-center items-center mt-[10rem] bg-[#FCB72B]  py-[6rem] overflow-hidden lg:mt-[8rem]'>
       <article className='flex justify-between items-center flex-col-reverse gap-[8rem] lg:flex-row overflow-hidden lg:gap-[20rem]'>
         <div className='flex justify-center items-center flex-col gap-[1rem] lg:items-start'>
           <div className='flex justify-center items-center gap-3'>
