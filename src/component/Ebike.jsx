@@ -9,12 +9,14 @@ import Card from '../shared/Card'
 import Universal from '../assets/PNG/Universal.svg'
 import Brampton from '../assets/PNG/Brampton.svg'
 import {motion} from 'framer-motion'
+import {ReactComponent as Vector2} from '../assets/PNG/Vector2.svg'
 SwiperCore.use([ Navigation , Pagination,Scrollbar , A11y])
 
 function Ebike() {
   return (
     <>
-      <div className=' w-[100vw] ml-0 lg:max-w-[1200px] overflow-hidden mt-10 p-4  lg:ml-72  lg:mt-[8rem]'>
+      <Vector2 className='hidden lg:inline absolute top-[42rem] opacity-40 left-[0rem]' />
+      <div className=' relative w-[100vw] ml-0 lg:max-w-[1200px] overflow-hidden mt-10 p-4  lg:ml-72  lg:mt-[8rem]'>
         <Swiper
           spaceBetween={10}
           className='mySwiper'
