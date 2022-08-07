@@ -15,11 +15,11 @@ SwiperCore.use([ Navigation , Pagination,Scrollbar , A11y])
 function Ebike() {
   return (
     <>
-      <Vector2 className='hidden lg:inline absolute top-[42rem] opacity-40 left-[0rem]' />
-      <div className=' relative w-[100vw] ml-0 lg:max-w-[1200px] overflow-hidden mt-10 p-4  lg:ml-72  lg:mt-[8rem]'>
+      {/* <Vector2 className='hidden lg:inline absolute top-[42rem] opacity-40 left-[0rem]' /> */}
+      <div className='w-[100vw] ml-0 lg:max-w-[1200px] overflow-auto mt-10 p-4 md:ml-[20rem] xl:ml-[13rem] lg:w-[80vw] overflow-x-  lg:mt-[8rem] xl:overflow-auto '>
         <Swiper
           spaceBetween={10}
-          className='mySwiper'
+          className='mySwiper xl:overflow-hidden'
           rewind={true}
           watchSlidesVisibility={true}
           slidesPerView={1}
@@ -35,7 +35,7 @@ function Ebike() {
               slidesPerView: 1,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView:3,
             },
           }}
         >
