@@ -17,13 +17,13 @@ function Header() {
     initial: {
       opacity: 0,
       scale:0,
-      height:'50vh',
+      height:'90vh',
       borderRadius: '100px',
       backgroundColor: '#944d06',
       transition: {
         ease: [0.25, 0.1, 0.25, 1],
         duration: 1,
-        delay: 0.5,
+        delay: 0.2,
       },
     },
     final: {
@@ -34,8 +34,7 @@ function Header() {
       height:'100vh',
       transition: {
         ease: [0.25, 0.1, 0.25, 1],
-        duration: 1,
-        delay: 0.5,
+      
       },
     },
     exit: {
