@@ -5,13 +5,19 @@ import {motion , AnimatePresence} from 'framer-motion'
 
 function Header() {
   const logoVarient = {
-    initial:{
-      x:-200,
+    initial: {
+      y: -200,
     },
     final: {
-      x:0,
-
-    }
+      y: 0,
+    },
+    transition: {
+      ease: 'easeInOut',
+      delay: 1,
+      duration: 2,
+      staggerChildren: 0.5,
+      staggerDelay: 0.7,
+    },
   }
   const mobileVarient = {
     initial: {
@@ -21,6 +27,7 @@ function Header() {
       borderRadius: '100px',
       backgroundColor: '#944d06',
       transition: {
+        
         ease: [0.25, 0.1, 0.25, 1],
         duration: 1,
         delay: 0.2,
@@ -54,13 +61,23 @@ function Header() {
         <motion.div
           variants={logoVarient}
           initial='initial'
-          animate={'final'}
-          className='flex justify-center items-center gap-3'
+          animate='final'
+          className='flex justify-center items-center gap-3 overflow-hidden'
         >
-          <p className='font-bold text-3xl rounded-full h-8 w-8 bg-[#FFBD37] text-white p-6 flex justify-center items-center'>
+          <motion.p
+            animate={{ opacity: [0, 1], y: [-200, 0] }}
+            transition={{ ease: 'easeInOut'  , delay: 0.1}}
+            className='font-bold text-3xl rounded-full h-8 w-8 bg-[#FFBD37] text-white p-6 flex justify-center items-center'
+          >
             B
-          </p>
-          <p className='text-[#233348] text-[24px] font-bold'>eBike</p>
+          </motion.p>
+          <motion.p
+            animate={{ opacity: [0, 1], y: [-200, 0] }}
+            transition={{ ease: 'easeInOut' , delay: 0.2 }}
+            className='text-[#233348] text-[24px] font-bold'
+          >
+            eBike
+          </motion.p>
         </motion.div>
         <motion.div animate={{ x: [2000, 0] }} className=' '>
           <ul className='hidden xl:flex justify-center items-center gap-5 cursor-pointer'>
@@ -76,10 +93,7 @@ function Header() {
 
         {isOpened && (
           <AnimatePresence>
-            <motion.div
-              key={1}
-              className='z-20'
-            >
+            <motion.div key={1} className='z-20'>
               <AnimatePresence>
                 <motion.ul
                   key={2}
