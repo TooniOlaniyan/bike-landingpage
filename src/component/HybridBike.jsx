@@ -7,19 +7,19 @@ import {motion} from 'framer-motion'
 
 function HybridBike() {
   const hybridVarient = {
-    initial:{
-      x:300,
-      opacity:0
+    initial: {
+      x: 300,
+      opacity: 0,
     },
-    final:{
-      x:0,
-      opacity:1
+    final: {
+      x: 0,
+      opacity: 1,
     },
-    transition:{
-      bounce:0.5,
-      duration:3
-
-    }
+    transition: {
+      bounce: 0.5,
+      duration: 3,
+      ease: [0.6, 0.25, 0.75, 0.75],
+    },
   }
   const textVarient = {
     initial:{
@@ -43,7 +43,7 @@ function HybridBike() {
         viewport={{ once: false }}
         className=' flex justify-center gap-5 items-center flex-col rounded-md  shadow-md bg-white p-3 w-[80vw] h-[350px]  lg:w-[25vw] lg:h-[380px] lg:gap-5'
       >
-      <Vector className='hidden lg:inline absolute top-[100rem] opacity-60 right-[0rem] z-[-1]' />
+        <Vector className='hidden lg:inline absolute top-[100rem] opacity-60 right-[0rem] z-[-1]' />
         <Lottie className='lg:w-[243px] h-[204px]' animationData={bikeLottie} />
         <div className='h-[1.5px] w-[95%] bg-[#C2CFE0] mb-3'></div>
         <div className='flex justify-center items-center gap-[6rem]'>
@@ -59,7 +59,10 @@ function HybridBike() {
 
       <motion.article
         transition={{
-          staggerChildren: 0.2,
+          staggerChildren: 0.3,
+          staggerDelay: 2,
+          delay: 2,
+          ease: [0.25, 0.25, 0.75, 0.75],
         }}
         initial='initial'
         whileInView={'final'}
@@ -68,13 +71,13 @@ function HybridBike() {
       >
         <motion.h2
           variants={hybridVarient}
-          className='text-[30px] text-[#233348] font-bold'
+          className='text-[30px] text-[#233348] font-bold overflow-hidden'
         >
           Hybrid Bikes
         </motion.h2>
         <motion.p
           variants={textVarient}
-          className='w-[80vw] text-[#7D7987] text-[18px] lg:w-[450px]'
+          className='w-[80vw] text-[#7D7987] text-[18px] lg:w-[450px] overflow-hidden'
         >
           Dummy Text progressive, and affordable healthcare, accessible on
           mobile and online for everyone. To us, it’s not just work. We take
@@ -82,7 +85,7 @@ function HybridBike() {
         </motion.p>
         <motion.button
           variants={textVarient}
-          className=' border-[1.3px] border-[#FCB72B] px-[3rem] py-3 rounded-[55px] text-[18px] text-[#FCB72B]'
+          className=' border-[1.3px] border-[#FCB72B] px-[3rem] py-3 rounded-[55px] text-[18px] text-[#FCB72B] overflow-hidden'
         >
           Learn more
         </motion.button>
